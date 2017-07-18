@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+ <TITLE>kuaisupaixu.java</TITLE>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <script type="text/javascript">
+  <!--
+   function ZweiFrames(URL1,F1,URL2,F2)
+   {
+    parent.frames[F1].location.href=URL1;
+    parent.frames[F2].location.href=URL2;
+   }
+  //-->
+  </script>
+</HEAD>
+<BODY BGCOLOR="#ffffff" style="margin-left:25">
+<HR>
+<H3><CENTER>kuaisupaixu.java</CENTER></H3><HR>
+<PRE>
+<A NAME="0"></A>package test;
+
+<FONT color="#0000ff"><div style="position:absolute;left:0"><A HREF="javascript:ZweiFrames('match1-0.html#0',2,'match1-top.html#0',1)"><IMG SRC="back.gif" ALT="other" BORDER="0" ALIGN="left"></A></div><B>import java.util.Scanner;
+
+public class kuaisupaixu {
+
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+        int[] sort=new int[10];
+        //???????
+        inputArr(sort);
+
+        quickSort(sort,0,sort.length-1);
+
+        System.out.println(&quot;???????&quot;);
+        printArr(sort);
+    }</B></FONT>
+
+    //??????????
+    public static int Partition(int[] sort,int low,int high){
+        int key=sort[low];
+        while(low&lt;high){
+            //???????
+            while(key&lt;sort[high]){
+                high--;
+            }
+            if(key&gt;sort[high]){
+                int temp=key;
+                key=sort[high];
+                sort[high]=temp;
+            }
+
+            //???????
+            while(sort[low]&lt;key){
+                low++;
+            }
+            if(sort[low]&gt;key){
+                int temp=key;
+                key=sort[low];
+                sort[low]=temp;
+            }
+        }
+        return low;
+    }
+
+    //???
+    public static void quickSort(int[] sort,int low,int high){
+        if(low&lt;high){
+            int middle=Partition(sort,low,high);
+<A NAME="1"></A>            quickSort(sort,low,middle-1);//??????????
+            quickSort(sort,middle+1,high);//??????????
+        }
+<FONT color="#f63526"><div style="position:absolute;left:0"><A HREF="javascript:ZweiFrames('match1-0.html#1',2,'match1-top.html#1',1)"><IMG SRC="back.gif" ALT="other" BORDER="0" ALIGN="left"></A></div><B>    }
+
+    //?????????????????
+    public static void inputArr(int[] sort){
+        Scanner sc = new Scanner(System.in);
+        System.out.println(&quot;?????????:&quot;);
+        for(int i=0;i&lt;sort.length;i++){
+            sort[i]=sc.nextInt();
+        }
+    }
+
+    //????????????
+    public static void printArr(int[] sort){
+        for(int i=0;i&lt;sort.length;i++){
+            System.out.print(sort[i]+&quot;  &quot;);
+        }
+    }
+
+}</B></FONT>
+</PRE>
+</BODY>
+</HTML>

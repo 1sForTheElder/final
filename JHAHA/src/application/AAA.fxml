@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="ana" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MyController">
+   <children>
+      <Button fx:id="btn_undo" layoutX="56.0" layoutY="38.0" mnemonicParsing="false" onAction="#click_undo" text="undo" />
+      <Label fx:id="lbl" layoutX="110.0" layoutY="176.0" text="Label" />
+      <Button fx:id="btn_redo" layoutX="181.0" layoutY="38.0" mnemonicParsing="false" onAction="#click_redo" text="redo" />
+      <TextArea fx:id="txt" layoutX="300.0" layoutY="100.0" prefHeight="200.0" prefWidth="200.0" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.web.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="1000.0" prefWidth="1182.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.TheController">
+   <children>
+      <AnchorPane prefHeight="1000.0" prefWidth="1182.0">
+         <children>
+            <MenuBar prefHeight="47.0" prefWidth="1182.0">
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem fx:id="MenuBar_btn_Source_File" mnemonicParsing="false" onAction="#Click_MenuBar_btn_Source_File" text="Source File" />
+                        <MenuItem fx:id="MenuBar_btn_Directory" mnemonicParsing="false" onAction="#Click_MenuBar_btn_Directory" text="Source Directory" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Undo" />
+                        <MenuItem mnemonicParsing="false" text="Redo" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <Pane layoutY="45.0" prefHeight="144.0" prefWidth="1182.0">
+               <children>
+                  <Label layoutX="16.0" layoutY="13.0" prefHeight="25.0" prefWidth="86.0" text="Source File:" />
+                  <Label layoutX="16.0" layoutY="49.0" prefHeight="25.0" prefWidth="86.0" text="File Directory:" />
+                  <Button fx:id="btn_UpLoadSourceFile" layoutX="578.0" layoutY="15.0" mnemonicParsing="false" onAction="#Click_btn_UpLoadSourceFile" text="Upload" />
+                  <Button fx:id="btn_UpLoadDirectory" layoutX="578.0" layoutY="50.0" mnemonicParsing="false" onAction="#Click_btn_UpLoadDirectory" text="Upload" />
+                  <Label fx:id="lbl_SourceFile" layoutX="113.0" layoutY="15.0" onMouseClicked="#Click_lbl_SourceFile" prefHeight="23.0" prefWidth="424.0" />
+                  <Label fx:id="lbl_directory" layoutX="113.0" layoutY="50.0" onMouseClicked="#Click_LblDirectory" prefHeight="23.0" prefWidth="424.0" />
+               </children>
+            </Pane>
+            <Button fx:id="bnt_TotalCheck" layoutX="479.0" layoutY="894.0" mnemonicParsing="false" onAction="#Click_bnt_TotalCheck" prefHeight="47.0" prefWidth="225.0" text="Check" />
+            <Accordion fx:id="Accordion_Main" layoutY="189.0" prefHeight="650.0" prefWidth="1182.0">
+              <panes>
+                <TitledPane fx:id="AccMain_Pane_Source_File" animated="false" expanded="false" text="Source File">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <ScrollPane prefHeight="603.0" prefWidth="838.0">
+                                 <content>
+                                    <HTMLEditor fx:id="htmlEditor" htmlText="&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body contenteditable=&quot;true&quot;&gt;&lt;/body&gt;&lt;/html&gt;" prefHeight="580.0" prefWidth="833.0" />
+                                 </content>
+                              </ScrollPane>
+                              <ScrollPane layoutX="838.0" prefHeight="603.0" prefWidth="344.0">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="578.0" prefWidth="344.0">
+                                       <children>
+                                          <Button fx:id="btn_Addtohighlight" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#Click_btn_Addtohighlight" text="Highlight" />
+                                          <Button fx:id="btn_CreateNewPart" layoutX="103.0" layoutY="14.0" mnemonicParsing="false" onAction="#click_btn_CreateNewPart" prefHeight="23.0" prefWidth="86.0" text="Craete part" />
+                                          <ColorPicker fx:id="TheColorPicker" disable="true" layoutX="145.0" layoutY="47.0" />
+                                          <Accordion fx:id="Accordion_SourceFileParts" layoutX="12.0" layoutY="83.0" prefHeight="350.0" prefWidth="303.0" />
+                                          <MenuButton fx:id="MenuButton_Color" layoutX="14.0" layoutY="47.0" mnemonicParsing="false" text="Color scheme">
+                                            <items>
+                                              <MenuItem fx:id="MenuButton_Color_1" mnemonicParsing="false" text="Automatic" />
+                                              <MenuItem fx:id="MenuButton_Color_2" mnemonicParsing="false" text="Select by hand" />
+                                            </items>
+                                          </MenuButton>
+                                          <Button fx:id="btn_SourceFileCheck" layoutX="138.0" layoutY="548.0" mnemonicParsing="false" onAction="#Click_btn_SourceFileCheck" text="Check" />
+                                          <MenuButton fx:id="Menu_ChooseAPart" layoutX="210.0" layoutY="14.0" mnemonicParsing="false" text="Choose a part" />
+                                       </children></AnchorPane>
+                                </content>
+                              </ScrollPane>
+                           </children></AnchorPane>
+                  </content>
+                </TitledPane>
+                  <TitledPane fx:id="AccMain_Pane_Directory_Files" animated="false" expanded="false" text="Directory Files">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <AnchorPane prefHeight="53.0" prefWidth="1182.0">
+                                 <children>
+                                    <Button fx:id="btn_Directory_Search" layoutX="945.0" layoutY="15.0" mnemonicParsing="false" onAction="#Click_btn_Directory_Search" text="Search" />
+                                    <TextField fx:id="txt_Directory_Search" layoutX="677.0" layoutY="15.0" prefHeight="23.0" prefWidth="235.0" />
+                                    <Button fx:id="btn_Directory_SelectAll" layoutX="48.0" layoutY="15.0" mnemonicParsing="false" onAction="#Click_btn_Directory_SelectAll" text="Select All" />
+                                    <Button fx:id="btn_Directory_ClearAll" layoutX="157.0" layoutY="15.0" mnemonicParsing="false" onAction="#Click_btn_Directory_ClearAll" text="Clear All" />
+                                    <Button fx:id="btn_Directory_Cancel" layoutX="1036.0" layoutY="15.0" mnemonicParsing="false" onAction="#Click_btn_Directory_Cancel" text="Cancel" />
+                                    <Label fx:id="lbl_Directory_number_of_files" layoutX="272.0" layoutY="15.0" prefHeight="23.0" prefWidth="189.0" text="Number of files included: " />
+                                 </children>
+                              </AnchorPane>
+                              <ScrollPane layoutX="3.0" layoutY="53.0" prefHeight="525.0" prefWidth="1176.0">
+                                 <content>
+                                    <GridPane fx:id="DirectoryGridPane" prefHeight="505.0" prefWidth="1181.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                          <RowConstraints maxHeight="475.0" minHeight="10.0" prefHeight="471.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                    </GridPane>
+                                 </content>
+                              </ScrollPane>
+                           </children></AnchorPane>
+                    </content>
+                  </TitledPane>
+                  <TitledPane fx:id="AccMain_Pane_Check_Report" animated="false" expanded="false" text="Check Report">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <ScrollPane prefHeight="282.0" prefWidth="1182.0">
+                                 <content>
+                                    <GridPane fx:id="Report_GridPane" prefHeight="45.0" prefWidth="1181.0">
+                                      <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                    </GridPane>
+                                 </content>
+                              </ScrollPane>
+                              <AnchorPane fx:id="AnchorPane_For_reports" layoutY="282.0" prefHeight="298.0" prefWidth="1182.0">
+                                 <children>
+                                    <WebView fx:id="WebView1" prefHeight="298.0" prefWidth="1182.0" />
+                                 </children></AnchorPane>
+                           </children></AnchorPane>
+                     </content>
+                  </TitledPane>
+              </panes>
+            </Accordion>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
